@@ -48,6 +48,22 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?page=contact.php">Contact</a>
                         </li>
+
+                        <!-- item de la navbar qui ne s'affiche que si la session admin n'existe pas -->
+                        <?php if(!isset($_SESSION['admin'])){ ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./admin/index.php">Administration</a>
+                        </li>
+                        <?php } ?>
+                        <!------->
+
+                        <!-- Item de la navbar qui ne s'affiche que si la session admin existe -->
+                        <?php if (isset($_SESSION['admin'])) { ?>
+                        <li>
+                            <a href="index.php?page=disconnect.php" class="float-right">Deconnexion</a>
+                        </li>
+                        <?php } ?>
+                        <!-------->
                     </ul>
                 </div>
             </div>
@@ -55,12 +71,6 @@
 
         <!-- container -->
         <div class="container">
-            <div class="row">
-                <div class="col-sm-11"><a href="./admin/index.php" class="float-right">
-                                Administration
-                            </a>
-                </div>
-            </div>
             <div class="row">
 
                 <!-- MENU -->

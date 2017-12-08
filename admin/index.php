@@ -9,11 +9,10 @@
     <head>
         <meta charset="UTF-8">
 
-        <title>gtBase</title>
+        <title>LoTR Shop</title>
 
-        <!-- Style CSS -->
-        <link href="./lib/css/style.css" rel="stylesheet">
-
+        <!-- style css -->
+        <link href="../lib/css/style.css" rel="stylesheet">
         <!-- Bootstrap core CSS -->
         <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -45,6 +44,22 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?page=contact.php">Contact</a>
                         </li>
+                        <!-- item de la navbar qui ne s'affiche que si la session admin n'existe pas -->
+                        <?php if(!isset($_SESSION['admin'])){ ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php">Administration</a>
+                        </li>
+                        <?php } ?>
+                        <!------->
+                        <!-- Item de la navbar qui ne s'affiche que si la session admin n'existe pas -->
+                        <?php if (isset($_SESSION['admin'])) {
+                                ?>
+                        <li>
+                            <a href="index.php?page=disconnect.php" class="float-right">Deconnexion</a>
+                        </li>
+                        <?php }
+                            ?>
+                        <!-------->
                     </ul>
                 </div>
             </div>
@@ -54,7 +69,7 @@
             <div class="row">
 
                 <!-- MENU -->
-                <div class="col-sm-2">
+                <div class="col-md-3">
                     <nav>
                         <?php
                         if (isset($_SESSION['admin'])) {
@@ -63,11 +78,17 @@
                             }
                             else print "Erreur, admin_menu.php introuvable.";
                         }
+                        else{
+                            if (file_exists("../lib/php/p_menu.php")) {
+                                include("../lib/php/p_menu.php");
+                            }
+                            else print "Erreur, p_menu.php introuvable.";
+                        }
                         ?>
                     </nav>
                 </div>
 
-                <div class="col-sm-10">
+                <div class="col-sm-9">
                     <div class="row">
                         <div class="col-sm-11">
                             <?php if (isset($_SESSION['admin'])) {
