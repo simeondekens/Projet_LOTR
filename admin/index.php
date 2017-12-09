@@ -55,7 +55,7 @@
                         <?php if (isset($_SESSION['admin'])) {
                                 ?>
                         <li>
-                            <a href="index.php?page=disconnect.php" class="float-right">Deconnexion</a>
+                            <a class="nav-link" href="index.php?page=disconnect.php">Deconnexion</a>
                         </li>
                         <?php }
                             ?>
@@ -87,19 +87,10 @@
                         ?>
                     </nav>
                 </div>
+                <!------->
 
                 <div class="col-sm-9">
-                    <div class="row">
-                        <div class="col-sm-11">
-                            <?php if (isset($_SESSION['admin'])) {
-                                ?>
-                            <a href="index.php?page=disconnect.php" class="float-right">
-                                    Deconnexion
-                                </a>
-                            <?php }
-                            ?>
-                        </div>
-                    </div>
+
                     <section>
                         <?php
                         //on arrive sur le site
@@ -121,7 +112,7 @@
                             if (file_exists($_SESSION['page'])) {
                                 include $_SESSION['page'];
                             } else {
-                                print "OUPS!!!!!";
+                                print "Page introuvable "+$_SESSION['page'];
                             }
                         ?>
                     </section>
