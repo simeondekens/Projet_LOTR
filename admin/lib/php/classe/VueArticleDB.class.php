@@ -11,9 +11,9 @@ class VueArticleDB {
 //liste des gâteaux correspondant au choix du type dans liste déroulante
     function getVueArticleType($id) {
         try {
-            $query = "SELECT * FROM VUE_ARTICLE where id_type=:id_type";
+            $query = "SELECT * FROM vue_article where id_categorie=:id_categorie";
             $resultset = $this->_db->prepare($query);
-            $resultset->bindValue(':id_type', $id);
+            $resultset->bindValue(':id_categorie', $id);
             $resultset->execute();
             $data = $resultset->fetchAll();
 //var_dump($data);
@@ -34,7 +34,7 @@ class VueArticleDB {
 
     function getVueArticle() {
         try {
-            $query = "SELECT * FROM VUE_ARTICLE order by type_article,nom_article";
+            $query = "SELECT * FROM vue_article order by categorie,nom";
             $resultset = $this->_db->prepare($query);
             $resultset->execute();
             $data = $resultset->fetchAll();
@@ -56,9 +56,9 @@ class VueArticleDB {
 
     function getVueArticleProduit($id) {
         try {
-            $query = "SELECT * FROM VUE_ARTICLE where id_article=:id_article";
+            $query = "SELECT * FROM vue_article where id_article=:id_article";
             $resultset = $this->_db->prepare($query);
-            $resultset->bindValue(':id_gateau', $id);
+            $resultset->bindValue(':id_article', $id);
             $resultset->execute();
             $data = $resultset->fetchAll();
 //var_dump($data);
