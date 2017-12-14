@@ -1,14 +1,22 @@
 <?php
-include_once("../lib/php/fonction_panier.php");
 session_start();
+
+include_once("../lib/php/fonction_panier.php");
+
 
 $erreur = false;
 
 $action = (isset($_POST['action'])? $_POST['action']:  (isset($_GET['action'])? $_GET['action']:null )) ;
 if($action !== null)
 {
+    
+    VAR_DUMP($_GET);
+
+    
    if(!in_array($action,array('ajout', 'suppression', 'refresh')))
    $erreur=true;
+    
+    
 
     //récuperation des variables en POST ou GET
     $id = (isset($_POST['id'])? $_POST['id']: (isset($_GET['id'])? $_GET['id']:null ));
@@ -16,6 +24,11 @@ if($action !== null)
     $p = (isset($_POST['p'])? $_POST['p']: (isset($_GET['p'])? $_GET['']:null ));
     $img = (isset($_POST['img'])? $_POST['img']: (isset($_GET['img'])? $_GET['img']:null ));
     $q = (isset($_POST['q'])? $_POST['q']: (isset($_GET['q'])? $_GET['q']:null ));
+    
+    
+    echo $id;
+    echo "testtest";
+    
 
    //Suppression des espaces verticaux
    $id = preg_replace('#\v#', '',$id);
@@ -26,6 +39,7 @@ if($action !== null)
    $p = floatval($p);
 
    //On traite $q qui peut etre un entier simple ou un tableau d'entier
+    $id = intval($id);
     
    if (is_array($q)){
       $QteArticle = array();

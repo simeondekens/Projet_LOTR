@@ -20,10 +20,8 @@
                     <a href="#"><img class="card-img-top" src="./images/LoTR_projet_pics/<?php print $article[$i]->IMAGE; ?>" alt="<?php print $article[$i]->IMAGE; ?>" ></a>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="./pages/panier.php?action=ajout&amp;id=<?php print $article[$i]->ID_CATEGORIE; ?>&amp;n=" <?php print UTF8_ENCODE($article[$i]->NOM); ?>"&amp;p="<?php print $article[$i]->PRIX; ?>"&amp;img="<?php print $article[$i]->IMAGE; ?>"&amp;q=1" onclick="window.open(this.href, '', 
-'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350'); return false;">
-                            
-                            <?php print UTF8_ENCODE($article[$i]->NOM); ?>
+                            <a href="index.php?page=commande.php&id=<?php print $article[$i]->ID_ARTICLE; ?>">
+                                <?php print UTF8_ENCODE($article[$i]->NOM); ?>
                             </a>
                         </h4>
                         <h5>

@@ -49,9 +49,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.php">Administration</a>
                         </li>
-                        <li>
-                            <a class="nav-item" href="index.php?page=panier.php"><img alt='panier' src="../images/LoTR_projet_pics/icon_basket.png" /></a>
-                        </li>
                         <?php } ?>
                         <!------->
                         <!-- Item de la navbar qui ne s'affiche que si la session admin n'existe pas -->

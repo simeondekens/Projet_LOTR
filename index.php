@@ -57,9 +57,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="./admin/index.php">Administration</a>
                         </li>
-                        <li>
-                            <a class="nav-item" href="index.php?page=panier.php"><img alt='panier' src="./images/LoTR_projet_pics/icon_basket.png" /></a>
-                        </li>
                         <?php } ?>
                         <!------->
 

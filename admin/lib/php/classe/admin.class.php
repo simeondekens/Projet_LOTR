@@ -1,7 +1,6 @@
 <?php
 
 class Admin {
-
     private $_attributs = array();
 
     public function __construct(array $data) {
@@ -17,7 +16,6 @@ class Admin {
     //getters
     public function __get($nom) {
         if (isset($this->_attributs[$nom])) {
-            // print_r($this->_attributs);
             return $this->_attributs[$nom];
         }
     }
