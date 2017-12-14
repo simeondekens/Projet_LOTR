@@ -1,5 +1,7 @@
 $(document).ready(function () {
     //code d'autocomplétion
+
+
     $('#password').blur(function () {
         var email1 = $('#email1').val();
         var email2 = $('#email2').val();
@@ -27,6 +29,8 @@ $(document).ready(function () {
             });
         }
     });
+
+
     //code pour le tableau éditable
     $("span[id]").click(function () {
         /*
@@ -56,26 +60,27 @@ $(document).ready(function () {
             var valeur2 = $(this).text();
             valeur2 = $.trim(valeur2);
 
-            if (valeur1 != valeur2)
-            {
-                var parametre = 'champ=' + name + '&id=' + ident + '&nouveau=' + valeur2;
+            if (valeur1 != valeur2) {
+                var parametre = 'champ=' + name.toUpperCase() + '&id=' + ident + '&nouveau=' + valeur2;
                 var retour = $.ajax({
                     type: 'GET',
                     data: parametre,
                     dataType: "text",
-                    url: "./lib/php/ajax/AjaxUpdateGateau.php",
+                    url: "./lib/php/ajax/AjaxUpdateArticles.php",
+
                     success: function (data) {
                         console.log("success");
+                        //alert("succes");
                     }
                 });
                 retour.fail(function (jqXHR, textStatus, errorThrown) {
                     //alert("Echec retour: " + textStatus + "\nerrorThrown: " + errorThrown);
+
                     console.log(jqXHR);
                     console.log(textStatus);
                     console.log(errorThrown);
                 });
-            }
-            ;
+            };
         });
     });
 

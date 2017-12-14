@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <?php
-   include('./admin/lib/php/listeInclude.php');
+    include('./admin/lib/php/listeInclude.php');
+    include_once("./lib/php/fonction_panier.php");
+
     $cnx = Connexion::getInstance($dsn, $user, $pass);
+
     session_start();
 ?>
 
@@ -54,16 +57,21 @@
                         <li class="nav-item">
                             <a class="nav-link" href="./admin/index.php">Administration</a>
                         </li>
+                        <li>
+                            <a class="nav-item" href="index.php?page=panier.php"><img alt='panier' src="./images/LoTR_projet_pics/icon_basket.png" /></a>
+                        </li>
                         <?php } ?>
                         <!------->
 
                         <!-- Item de la navbar qui ne s'affiche que si la session admin existe -->
                         <?php if (isset($_SESSION['admin'])) { ?>
                         <li>
-                            <a href="index.php?page=disconnect.php" class="float-right">Deconnexion</a>
+                            <a class="nav-link" href="./admin/index.php?page=disconnect.php">Deconnexion</a>
                         </li>
                         <?php } ?>
                         <!-------->
+
+
                     </ul>
                 </div>
             </div>

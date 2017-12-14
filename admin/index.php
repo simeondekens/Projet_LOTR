@@ -24,35 +24,39 @@
         <!-- Navigation -->
         <nav style="font-family: 'Spectral+SC'; font-size: 25px;" class="navbar navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
             <div class="container">
-                <a class="navbar-brand" href="index.php?page=accueil.php" style="font-size: 25px;"><img src="../images/LoTR_projet_pics/icon_ring_2.png" alt="Ring icon"> LoTR shop</a>
+                <a class="navbar-brand" href="../index.php?page=accueil.php" style="font-size: 25px;"><img src="../images/LoTR_projet_pics/icon_ring_2.png" alt="Ring icon"> LoTR shop</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?page=accueil.php">Accueil
+                            <a class="nav-link" href="../index.php?page=accueil.php">Accueil
                             <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?page=a_propos.php">A propos</a>
+                            <a class="nav-link" href="../index.php?page=a_propos.php">A propos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?page=services.php">Services</a>
+                            <a class="nav-link" href="../index.php?page=services.php">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?page=contact.php">Contact</a>
+                            <a class="nav-link" href="../index.php?page=contact.php">Contact</a>
                         </li>
                         <!-- item de la navbar qui ne s'affiche que si la session admin n'existe pas -->
                         <?php if(!isset($_SESSION['admin'])){ ?>
                         <li class="nav-item">
                             <a class="nav-link" href="index.php">Administration</a>
                         </li>
+                        <li>
+                            <a class="nav-item" href="index.php?page=panier.php"><img alt='panier' src="../images/LoTR_projet_pics/icon_basket.png" /></a>
+                        </li>
                         <?php } ?>
                         <!------->
                         <!-- Item de la navbar qui ne s'affiche que si la session admin n'existe pas -->
-                        <?php if (isset($_SESSION['admin'])) {
+                        <?php 
+                        if (isset($_SESSION['admin'])) {
                                 ?>
                         <li>
                             <a class="nav-link" href="index.php?page=disconnect.php">Deconnexion</a>
@@ -126,6 +130,11 @@
                 </div>
             </div>
         </div>
+        <script src="./lib/jquery/jquery.min.js"></script>
+        <script src="./lib/jquery/gt_functionsAjax.js"></script>
+        <script type="text/javascript" src="./lib/jquery/dist/jquery.validate.js"></script>
+        <script src="./lib/jquery/gt_functionsVal.js"></script>
     </body>
+
 
     </html>

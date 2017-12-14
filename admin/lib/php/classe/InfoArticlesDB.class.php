@@ -3,6 +3,7 @@
 class InfoArticlesDB extends InfoTexte {
     private $_db;
     private $_infoArray = array();
+    private $_variable="valeur";
     
     public function __construct($cnx){
         $this->_db = $cnx;
@@ -23,5 +24,18 @@ class InfoArticlesDB extends InfoTexte {
             print "Erreur ".$e->getMessage();
         }       
        
+    }
+    
+     public function updateArticle($champ,$nouveau,$id){ 
+         
+        try {
+            $query='UPDATE articles set '.$champ.' = "'.UTF8_DECODE($nouveau).'" where ID_ARTICLE ='.$id.'';  
+            print $query;
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();            
+            
+        }catch(PDOException $e){
+            print $e->getMessage();
+        }
     }
 }
