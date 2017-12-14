@@ -6,7 +6,7 @@ $(document).ready(function () {
         var email1 = $('#email1').val();
         var email2 = $('#email2').val();
         var password = $('#password').val();
-        //alert(email1+" "+email2+" "+password);
+        //alert(email1 + " " + email2 + " " + password);
         if (($.trim(email1) != '' && $.trim(email2) != '' && $.trim(password) != '') && (email1 == email2)) {
             //ecriture des param accompagnant le nom du fichier
             var recherche = "email=" + email1 + "&password=" + password;
@@ -17,14 +17,9 @@ $(document).ready(function () {
                 dataType: "json", // format des données retournées
                 url: './admin/lib/php/ajax/AjaxRechercheClient.php',
                 success: function (data) {
-                    console.log("coucou");
-                    $('#nom').val(data[0].NOM_CLIENT);
-                    $('#prenom').val(data[0].PRENOM_CLIENT);
-                    $('#telephone').val(data[0].TELEPHONE);
-                    $('#adresse').val(data[0].RUE);
-                    $('#numero').val(data[0].NUMERO);
-                    $('#codepostal').val(data[0].CODEPOSTAL);
-                    $('#localite').val(data[0].LOCALITE);
+                    //console.log("coucou");
+                    $('#nom').val(data[0].NOM);
+                    $('#prenom').val(data[0].PRENOM);
                 }
             });
         }

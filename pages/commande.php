@@ -43,61 +43,53 @@ if (isset($_SESSION['id_commande'])) {
     }
     ?>
         <div class="row">
-            <div class="col-sm-2">
+            <div class="col-sm-5">
                 <?php print $liste[0]['NOM']; ?>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-5">
                 <?php print $liste[0]['PRIX']; ?>€
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 erreur">
-                    <?php
+
+        <div class="row">
+            <div class="col-sm-4 erreur">
+                <?php
                 if (isset($erreur)) {
                     print $erreur;
                 }
                 ?>
-                </div>
             </div>
-            <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="get" id="form_commande">
+        </div>
+        <div class="row">
+            <form action="<?php print $_SERVER[ 'PHP_SELF']; ?>" method="get" id="form_commande">
 
-                <div class="row">
-                    <div class="col-sm-2"><label for="email1">Email</label></div>
-                    <div class="col-sm-4">
-                        <input type="email" id="email1" name="email1" placeholder="aaa@aaa.aa" />
-                    </div>
+                <div class="form-group">
+                    <label for="email1">Email</label>
+                    <input class="form-control" type="email" id="email1" name="email1" placeholder="Entrez votre email.">
                 </div>
-
-                <div class="row">
-                    <div class="col-sm-2"><label for="email2">Confirmez votre email</label></div>
-                    <div class="col-sm-4">
-                        <input type="email" id="email2" name="email2" placeholder="aaa@aaa.aa" />
-                    </div>
+                <div class="form-group">
+                    <label for="email2">Confirmez votre email</label>
+                    <input class="form-control" type="email" id="email2" name="email2" placeholder="Confirmez votre email">
                 </div>
-                <div class="row">
-                    <div class="col-sm-2"><label for="password">Password</label></div>
-                    <div class="col-sm-4">
-                        <input type="password" id="password" name="password" />
-                    </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="password" id="password" name="password">
                 </div>
-                <div class="row">
-                    <div class="col-sm-2"><label for="nom">Nom</label></div>
-                    <div class="col-sm-4">
-                        <input type="text" name="nom" id="nom" />
-                    </div>
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input class="form-control" type="text" name="nom" id="nom">
                 </div>
-                <div class="row">
-                    <div class="col-sm-2"><label for="prenom">Prénom</label></div>
-                    <div class="col-sm-4">
-                        <input type="text" name="prenom" id="prenom" />
-                    </div>
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input class="form-control" type="text" name="prenom" id="prenom">
                 </div>
-                <br/>
+<br/>
                 <div class="row">
-                    <div class="col-sm-4">
-                        <input type="submit" name="commander" id="commander" value="Finaliser ma commande" class="pull-right" />&nbsp;
-                        <input type="reset" id="reset" value="Annuler" class="pull-left" />
+                    <div class="col-md-6">
+                        <button type="submit" id="commander" name="commander" class="btn btn-primary">Commander</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="reset" id="reset" name="commander" class="btn btn-secondary">Annuler</button>
                     </div>
                 </div>
             </form>

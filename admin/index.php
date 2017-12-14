@@ -38,12 +38,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../index.php?page=a_propos.php">A propos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.php?page=services.php">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.php?page=contact.php">Contact</a>
-                        </li>
                         <!-- item de la navbar qui ne s'affiche que si la session admin n'existe pas -->
                         <?php if(!isset($_SESSION['admin'])){ ?>
                         <li class="nav-item">

@@ -45,13 +45,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?page=a_propos.php">A propos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php?page=services.php">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php?page=contact.php">Contact</a>
-                        </li>
-
                         <!-- item de la navbar qui ne s'affiche que si la session admin n'existe pas -->
                         <?php if(!isset($_SESSION['admin'])){ ?>
                         <li class="nav-item">
@@ -122,8 +115,11 @@
 
 
 
-        <script src="admin/lib/jquery/jquery.min.js"></script>
         <script src="admin/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="./admin/lib/jquery/jquery.min.js"></script>
+        <script src="./admin/lib/jquery/gt_functionsAjax.js"></script>
+        <script type="text/javascript" src="./admin/lib/jquery/dist/jquery.validate.js"></script>
+        <script src="./admin/lib/jquery/gt_functionsVal.js"></script>
     </body>
 
     </html>

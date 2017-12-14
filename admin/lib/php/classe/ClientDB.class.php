@@ -10,7 +10,7 @@ class ClientDB extends InfoTexte{
     }
     
     public function getClientJson($email,$password){
-        $query="select * from clients where MAIL = :mail and PASSWORD= :password";
+        $query="select * from clients where MAIL = :mail and PASSWORD = :password";
         try {
         $resultset = $this->_db->prepare($query);
         $resultset->bindValue(':mail',$email, PDO::PARAM_STR);

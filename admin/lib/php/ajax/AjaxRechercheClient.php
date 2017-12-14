@@ -2,9 +2,9 @@
 
 header('Content-type: application/json');
 require '../dbConnectMysql.php';
-require '../classes/Connexion.class.php';
-require '../classes/Client.class.php';
-require '../classes/ClientDB.class.php';
+require '../classe/Connexion.class.php';
+require '../classe/InfoTexte.class.php';
+require '../classe/ClientDB.class.php';
 $cnx = Connexion::getInstance($dsn, $user, $pass);
 
 try {
