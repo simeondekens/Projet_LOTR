@@ -20,14 +20,13 @@ if (isset($_SESSION['id_commande'])) {
         } else {
             $commande = new CommandeDB($cnx);
             $client = new ClientDB($cnx);
-            $c = $client->getClient($email1);
-            
-            if($c == null){
-                $client->addClient($_GET);
+             
+                $client->addClient($_GET);  
                 $c = $client->getClient($email1);
-            }
+                //print VAR_DUMP($c);
+                //print $c[0]['ID_CLIENT'];
+                $fk_client = $c[1]['ID_CLIENT'];
             
-                $fk_client = $c[0]['ID_CLIENT'];
                 $fk_produit = $_SESSION['id_commande'];
                 $total = $liste[0]['PRIX'];
                 $date = date("m.d.y");
@@ -83,7 +82,7 @@ if (isset($_SESSION['id_commande'])) {
                     <label for="prenom">Prénom</label>
                     <input class="form-control" type="text" name="prenom" id="prenom">
                 </div>
-<br/>
+                <br/>
                 <div class="row">
                     <div class="col-md-6">
                         <button type="submit" id="commander" name="commander" class="btn btn-primary">Commander</button>

@@ -41,9 +41,11 @@ class ClientDB extends InfoTexte{
             print $e->getMessage();
         }
 
+        $_clientArray[] = array();
         while ($data = $resultset->fetch()) {
-            try {
-                //$_clientArray[] = new Client ($data);
+           
+            try { 
+                //$_clientArray[] = array();
                 $_clientArray[] = $data;
             } catch (PDOException $e) {
                 print $e->getMessage();
