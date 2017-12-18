@@ -43,7 +43,7 @@ if (isset($_SESSION['id_commande'])) {
     ?>
         <div class="row">
             <div class="col-sm-5">
-                <?php print $liste[0]['NOM']; ?>
+                <?php print UTF8_ENCODE($liste[0]['NOM']); ?>
             </div>
             <div class="col-sm-5">
                 <?php print $liste[0]['PRIX']; ?>€
