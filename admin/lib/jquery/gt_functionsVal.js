@@ -15,19 +15,7 @@ $(document).ready(function () {
             },
             nom: "required",
             prenom: "required",
-            password : "required",
-            telephone: {
-                required: true,
-                regex: /^(0)[0-9]{2,3}\/[0-9]{2}\.[0-9]{2}\.[0-9]{2}$/
-            },
-            adresse: "required",
-            numero: "required",
-            codepostal: {
-                required: true,
-                min: 1000,
-                max: 9999
-            },
-            localite: "required",
+            password: "required",
             submitHandler: function (form) {
                 form.submit();
             }
@@ -54,5 +42,3 @@ $(document).ready(function () {
 
 
 });
-
-

@@ -13,7 +13,7 @@
     <head>
         <meta charset="UTF-8">
 
-        <title>gtBase</title>
+        <title>LoTR Shop</title>
 
         <!-- Style CSS -->
         <link href="./lib/css/style.css" rel="stylesheet">
@@ -74,7 +74,13 @@
                 <!-- MENU -->
                 <div class="col-lg-3">
                     <?php 
-                        if (file_exists("./lib/php/p_menu.php")){
+                        if (isset($_SESSION['admin'])) {
+                            if (file_exists("./admin/lib/php/admin_menu.php")) {
+                                include("./admin/lib/php/admin_menu.php");
+                            }
+                            else print "Erreur, admin_menu.php introuvable.";
+                        }
+                        else if(file_exists("./lib/php/p_menu.php")){
                             include("./lib/php/p_menu.php");
                         }
                         else print "Erreur, p_menu.php introuvable.";
@@ -115,11 +121,14 @@
 
 
 
-        <script src="admin/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
         <script src="./admin/lib/jquery/jquery.min.js"></script>
         <script src="./admin/lib/jquery/gt_functionsAjax.js"></script>
         <script type="text/javascript" src="./admin/lib/jquery/dist/jquery.validate.js"></script>
         <script src="./admin/lib/jquery/gt_functionsVal.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     </body>
 
     </html>
