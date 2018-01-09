@@ -28,6 +28,7 @@ $(document).ready(function () {
 
     //code pour le tableau éditable
     $("span[id]").click(function () {
+
         /*
          $(this).removeClass('cke_editable');        
          $(this).removeClass('cke_editable_inline');
@@ -51,11 +52,13 @@ $(document).ready(function () {
         var name = $(this).attr("name");
 
         $(this).blur(function () {
+
             $(this).removeClass("borderInput");
             var valeur2 = $(this).text();
             valeur2 = $.trim(valeur2);
 
             if (valeur1 != valeur2) {
+                //alert("test2");
                 var parametre = 'champ=' + name.toUpperCase() + '&id=' + ident + '&nouveau=' + valeur2;
                 var retour = $.ajax({
                     type: 'GET',

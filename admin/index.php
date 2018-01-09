@@ -22,7 +22,7 @@
 
     <body>
         <!-- Navigation -->
-        <nav style="font-family: 'Spectral+SC'; font-size: 25px;" class="navbar navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
+        <nav style="font-family: 'Spectral+SC';font-size: 25px;" class="navbar navbar sticky-top navbar-expand-lg navbar-dark bg-dark navigation">
             <div class="container">
                 <a class="navbar-brand" href="../index.php?page=accueil.php" style="font-size: 25px;"><img src="../images/LoTR_projet_pics/icon_ring_2.png" alt="Ring icon"> LoTR shop</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -125,6 +125,10 @@
         <script src="./lib/jquery/gt_functionsAjax.js"></script>
         <script type="text/javascript" src="./lib/jquery/dist/jquery.validate.js"></script>
         <script src="./lib/jquery/gt_functionsVal.js"></script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     </body>
 
 

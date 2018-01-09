@@ -29,7 +29,7 @@
 
     <body>
         <!-- Navigation -->
-        <nav style="font-family: 'Spectral+SC'; font-size: 25px;" class="navbar navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
+        <nav style="font-family: 'Spectral+SC';font-size: 25px;" class="navbar navbar sticky-top navbar-expand-lg navbar-dark bg-dark navigation">
             <div class="container">
                 <a class="navbar-brand" href="index.php?page=accueil.php" style="font-size: 25px;"><img src="./images/LoTR_projet_pics/icon_ring_2.png" alt="Ring icon"> LoTR shop</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
